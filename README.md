@@ -27,9 +27,10 @@ This is the frontend of the Sales Application, built with React.js and styled us
    ```bash
    npm install  
 
-   Run the development server Start the React development server by running:
+3. **Run the development** server Start the React development server by running:
    ```bash
    npm start  
 
-   Build for production To create a production build of the app, use the following command:  
+4. **Build for production** To create a production build of the app, use the following command:  
+   ```bash
    npm run build  
