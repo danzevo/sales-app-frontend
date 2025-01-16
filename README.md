@@ -22,15 +22,19 @@ This is the frontend of the Sales Application, built with React.js and styled us
    ```bash
    git clone https://github.com/yourusername/sales-app-frontend.git
    cd sales-app-frontend
-2. **Install dependencies**
+2. **Install dependencies**  
    Install the required npm dependencies by running the following command:
    ```bash
-   npm install  
-
-3. **Run the development** server Start the React development server by running:
+   npm install
+3. **Set up environment variables**  
+   Create a .env file in the root directory and configure the following:
+   ```bash
+   REACT_APP_API_URL=http://localhost:8080/api  
+4. **Run the development**  
+   server Start the React development server by running:
    ```bash
    npm start  
-
-4. **Build for production** To create a production build of the app, use the following command:  
+6. **Build for production**  
+   To create a production build of the app, use the following command:  
    ```bash
    npm run build  
