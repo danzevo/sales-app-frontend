@@ -1,6 +1,6 @@
 # Sales Application Frontend
 
-This is the frontend of the Sales Application, built with React.js and styled using Tailwind CSS. It connects to the backend API to provide an interface for managing transactions, products, and user authentication.
+This is the frontend of the Sales Application, built with React.js and styled using Tailwind CSS. It connects to the backend API https://github.com/danzevo/sales-app to provide an interface for managing transactions, products, and user authentication.
 
 ## Features
 
