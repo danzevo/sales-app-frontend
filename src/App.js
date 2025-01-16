@@ -8,6 +8,9 @@ import ProtectedRoute from './components/Shared/ProtectedRoute';
 import RegisterPage from './pages/RegisterPage';
 import MainLayout from './components/Layout/MainLayout';
 import NotFoundPage from './pages/NotFoundPage';
+import ProductPage from './pages/ProductPage';
+import TransactionPage from './pages/TransactionPage';
+import ReportPage from './pages/ReportPage';
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -31,19 +34,40 @@ function App() {
           <Route path="/admin" element={
             <ProtectedRoute role="ADMIN">
               <MainLayout>
-                <h1>Admin Page</h1>
+                Admin page
               </MainLayout>
             </ProtectedRoute>
           }/>
-          <Route path="/kasir"
+          <Route path="/product" element={
+            <ProtectedRoute role="ADMIN">
+              <MainLayout>
+                <ProductPage />
+              </MainLayout>
+            </ProtectedRoute>
+          }/>
+          <Route path="/kasir" element={
+            <ProtectedRoute role="KASIR">
+              <MainLayout>
+                Kasir page
+              </MainLayout>
+            </ProtectedRoute>
+          }/>
+          <Route path="/transaction"
             element={
               <ProtectedRoute role="KASIR">
                 <MainLayout>
-                  <h1>Kasir Page</h1>
+                  <TransactionPage/>
                 </MainLayout>
               </ProtectedRoute>
             }/>
-
+          <Route path="/report"
+            element={
+              <ProtectedRoute role="KASIR">
+                <MainLayout>
+                  <ReportPage />
+                </MainLayout>
+              </ProtectedRoute>
+            }/>
           {/* If no route matches, show the NotFoundPage */}
           <Route path="*" element={<NotFoundPage/>}/>
         </Routes>

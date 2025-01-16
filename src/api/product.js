@@ -6,8 +6,8 @@ export const getProducts = async() => {
 }
 
 export const getProductById = async(id) => {
-    const response = await axiosInstance.get('products/${id}');
-    return response.data
+    const response = await axiosInstance.get(`products/${id}`);
+    return response.data;
 }
 
 export const createProduct = async(productData) => {
@@ -16,11 +16,11 @@ export const createProduct = async(productData) => {
 }
 
 export const updateProduct = async(id, productData) => {
-    const response = await axiosInstance.put('products/${id}', productData);
+    const response = await axiosInstance.put(`products/${id}`, productData);
     return response.data;
 }
 
 export const deleteProduct = async(id) => {
-    const response = await axiosInstance.delete('/product/${id}');
+    const response = await axiosInstance.delete(`/product/${id}`);
     return response.data;
 }

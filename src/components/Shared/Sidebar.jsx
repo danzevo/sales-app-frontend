@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { FaBars, FaBox, FaShoppingCart, FaChartBar } from 'react-icons/fa';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Sidebar = () => {
     const [ isMinimized, setIsMinimized ] = useState(false);
-
+    const { user } = useContext(AuthContext);
+    
     const toggleSidebar = () => {
         setIsMinimized(!isMinimized);
     };
@@ -26,14 +28,16 @@ const Sidebar = () => {
 
             {/* Sidebar Links */}
             <ul>
-                <li>
+                {user.role === 'ADMIN' && 
+                (<li>
                     <a href="/product" title="Product" className={`flex items-center py-2 px-4 mb-2 rounded-lg hover:bg-blue-600 transition-all ${
                                                     isMinimized ? 'justify-center' : 'justify-start'
                                                 }`}>
                         <FaBox size={20} className={`${ isMinimized ? '' : 'mr-3'}`}/> 
                         {!isMinimized && <span>Product</span>}
                     </a>
-                </li>
+                </li> 
+                )}
                 <li>
                 <a href="/transaction" title="Transaction" className={`flex items-center py-2 px-4 mb-2 rounded-lg hover:bg-blue-600 transition-all ${
                                                     isMinimized ? 'justify-center' : 'justify-start'

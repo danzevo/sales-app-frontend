@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import { getInitializedLetter } from '../../utils/Helper';
 
 const Navbar = () => {
     const { logout, user } = useContext(AuthContext);
@@ -27,7 +28,7 @@ const Navbar = () => {
         }
     }, []);
 
-    const initial = user.username.charAt(0).toUpperCase();
+    const initial = getInitializedLetter(user.username);
 
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 rounded-full">
                     <circle cx="50" cy="50" r="50" fill="#4C51BF"/>
